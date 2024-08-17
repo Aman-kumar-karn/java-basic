@@ -2,10 +2,18 @@ Introduction to the git hub commands
 git status is use to know the status of chamge made in the locall computer
 to commit we fist add the file then we commit 
 code 
-git add file name
+git add file name or git add .
 git commit -m "the messae you want to show 
 then everything is commited and to see this changes in the git hub reposatory we have to push 
 code - git push
+to go inside the folder we use cd command
+cd <folder name>
+git init - use to make new reposatory
+git remote add origin link- to add it with the git reposatory
+git remote -v
+git branch - to check the branch
+git branch -M main to rename the banch 
+git push origin main - to push the file 
 
 
 
