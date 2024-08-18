@@ -15,3 +15,5 @@ git branch - to check the branch
 git branch -M main to rename the banch 
 git push origin main - to push the file 
 ls -Hidden - to see the hidden folders
+touch file name - is used to create a new file 
+rm -rd - is used to remove the file 
