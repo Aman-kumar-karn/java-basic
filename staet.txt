@@ -6,7 +6,7 @@ git add file name or git add .
 git commit -m "the messae you want to show 
 then everything is commited and to see this changes in the git hub reposatory we have to push 
 code - git push
-to go inside the folder we use cd command
+to go inside the folder we use cd command and to come out of the folder we use cd ..
 cd <folder name>
 git init - use to make new reposatory
 git remote add origin link- to add it with the git reposatory
@@ -14,6 +14,8 @@ git remote -v
 git branch - to check the branch
 git branch -M main to rename the banch 
 git push origin main - to push the file 
+ls -Hidden - to see the hidden folders
+
 
 
 
