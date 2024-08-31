@@ -16,4 +16,7 @@ git branch -M main to rename the banch
 git push origin main - to push the file 
 ls -Hidden - to see the hidden folders
 touch file name - is used to create a new file 
-rm -rd - is used to remove the file 
+rm - is used to remove the file 
+git stash - use to keep the changes without commiting to it 
+git stash pop - is used to bring the changes tha have been made 
+git stash clear is use to clean the stached work
