@@ -9,3 +9,5 @@ public class DataType {
 
     }
 }
+// a byte is 8bits, short is 2bytes, int is 4bytes, long is 8bytes
+// to calculate a range in a of agiven datatype (-2^(noOfBites-1),2^(noOfBytes-1)-1)
