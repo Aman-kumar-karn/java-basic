@@ -1,9 +1,9 @@
 public class basic{
     public static void main(String[] arg) {
-        Main.hi();
-        System.out.println(arg[0]);
-        System.out.println(arg[1]);
-        System.out.println(arg[2]);
+        hi();
+        // System.out.println(arg[0]);
+        // System.out.println(arg[1]);
+        // System.out.println(arg[2]);
 
         hi();
         /* We di not write System.out here because the java knowas that this 
@@ -30,6 +30,9 @@ public class basic{
  * used inside the class the class. static mehors- we can use the fiels or methors using class name
   */
   /* here java finds this objecct .hi in the Main methord created by us 
-         * here java-basic is the package in which we can create new classes 
-         * and inside classes we can create new methords
-         */
+ * here java-basic is the package in which we can create new classes 
+ * and inside classes we can create new methords
+ *
+ /* if we pass a value in the function i.e the methord inside a class, it is called a parameter and 
+ * the value returned is call the return type 
+ */
