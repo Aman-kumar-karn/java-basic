@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class arry {
+class arry {
     public static void main(){
         Scanner sr= new Scanner(System.in);
         // System.out.println("enter the size of array");

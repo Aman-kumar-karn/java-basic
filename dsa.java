@@ -136,7 +136,7 @@ public class dsa {
         return count;
     }
     
-    public static void  main(){
+    public static void  main(String[] args){
         // int [ ] num={3,3,546,656,54,45,5645,2};
         // System.out.println(removeElement(num,2));
         // long k=-1;
