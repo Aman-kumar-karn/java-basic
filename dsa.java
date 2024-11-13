@@ -116,8 +116,9 @@ public class dsa {
     public static int findNumbers(int[] nums) {
         int k=0;
         for(int a : nums){
-            int c= digits(a);
-            if (c%2==0){
+            String d=a+"";
+            int c = d.length();
+            if(c%2==0){
                 k++;
             }
         }
@@ -135,6 +136,70 @@ public class dsa {
         }
         return count;
     }
+    public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int m= nums1.length, n=nums2.length;
+        int []NewArray= new int [m+n];
+        int temp=0;
+        int i=0,j=0;
+        while(temp<m+n-1){
+            if(nums1[i]<nums2[j]){
+                NewArray[temp]=nums1[i];
+                if (i<m-1){
+
+                    i++;
+                }
+                temp++;
+            }
+            else if (nums2[j]<nums1[i]){
+                NewArray[temp]=nums2[j];
+                if (j<n-1){
+
+                    j++;
+                }
+                temp++;
+            }
+            else{
+                i++;
+                j++;
+                temp++;
+            }
+        }
+        NewArray[temp]=Math.max(nums1[i],nums2[j]);
+        double d=median(NewArray);
+        return d;
+        
+    }
+    public static double median(int [] nums){
+        int n=nums.length;
+        if (n%2==0){
+            int a=nums[(n/2)-1];
+            int b=nums[n/2];
+
+            double d= Math.abs((a+b)/2);
+            Math.abs(d);
+            return Math.abs((a+b)/2);
+        }
+        else {
+            return (double)nums[(n/2)];
+        }
+    } public static char nextGreatestLetter(char[] letters, char target) {
+        int end=letters.length-1;
+        int start=0;
+        while (start <=end){
+            int mid =(start+end)/2;
+            if(letters[mid]==target){
+                start=mid+1;
+            }
+            if(letters[mid]>target){
+                end=mid-1;
+            }
+            else if(letters[mid]<target){
+                start=mid+1;
+            }
+        }
+        return letters[start];
+        
+    }
     
     public static void  main(String[] args){
         // int [ ] num={3,3,546,656,54,45,5645,2};
@@ -144,8 +209,12 @@ public class dsa {
         // System.out.println(myPow(2,-2147483648));
         // System.out.println(k);
         // System.out.println(longestSubarray(num));
-        int [] a ={12,345,2,6,7896};
-        System.out.println(findNumbers(a)); 
+        char [] a ={'x','x','y','y'};
+        // System.out.println(findNumbers(a)); 
+        // System.out.println((int)Math.log10(34333));
+        int [] nums1 = {1,4} ,nums2 = {2,3};
+        char target='z';
+        System.out.println(nextGreatestLetter(a,target));
 
 
     }

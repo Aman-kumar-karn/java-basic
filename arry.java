@@ -1,7 +1,7 @@
 import java.util.*;
 
 class arry {
-    public static void main(){
+    public static void main(String[] args){
         Scanner sr= new Scanner(System.in);
         // System.out.println("enter the size of array");
         // int n=sr.nextInt();
@@ -68,10 +68,33 @@ class arry {
         // marks.add(62);
         // System.out.println(marks);
         // System.out.println(marks.get(4));//we cannot access the index using marks[i]
-        String name="sudhansu" ,tittle ="sharma";
-        char find='a';
-        System.out.println(Arrays.toString((name+tittle).toCharArray()));
-        System.out.println(binarySearch(name, find));
+        // String name="sudhansu" ,tittle ="sharma";
+        // char find='a';
+        // System.out.println(Arrays.toString((name+tittle).toCharArray()));
+        // System.out.println(binarySearch(name, find));
+        // double c=5/2;
+        // System.out.println(c);
+        char []letters = {'c','f','j'};
+        char target = 'a';
+        System.out.println(nextGreatestLetter(letters,target));
+    }
+    public static char nextGreatestLetter(char[] letters, char target) {
+        char answer=letters[0];
+        int end=letters.length,start=0,mid=0;
+        if (letters[end-1]<target){
+            return answer;
+        }
+        while(start<=end){
+            mid=(start+end)/2;
+            if (target<letters[mid]){
+                answer=letters[mid];
+                end=mid-1;
+            }
+            else if(target>letters[mid]){
+                start=mid+1;
+            }
+        }
+        return answer;
     }
     public static boolean binarySearch(String object ,char target){
         if(object.length()==0){
