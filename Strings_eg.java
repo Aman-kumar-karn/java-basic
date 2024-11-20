@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Strings {
+public class Strings_eg {
     public static void main(){
         Scanner sr = new Scanner (System.in);
         // String name= sr.next();
@@ -26,7 +26,8 @@ public class Strings {
         // String sentence = scr.nextLine();
         // System.out.println(sentence.length()+"****" +sentence.charAt(4));// prints the length of the string 
         // System.out.println(sentence.substring(2,sentence.length()));
-
+        String name= "aman ";
+        System.out.println(name.repeat(2));
 
 
         // // String builder

@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.IntFunction;
 
 class arry {
     public static void main(String[] args){
@@ -74,10 +75,60 @@ class arry {
         // System.out.println(binarySearch(name, find));
         // double c=5/2;
         // System.out.println(c);
-        char []letters = {'c','f','j'};
-        char target = 'a';
-        System.out.println(nextGreatestLetter(letters,target));
+        // char []letters = {'c','f','j'};
+        // char target = 'a';
+        // System.out.println(nextGreatestLetter(letters,target));
+        // List <Integer> arry= new ArrayList<>();
+        // Integer [] arr={1,4,6,4,4};
+        System.out.println(Arrays.toString(beautifulArr(5)));
+        
     }
+    public static int [] beautifulArray2(int n) {
+        ArrayList<Integer> ans=new ArrayList<>();
+        ans.add(1);
+        while(ans.size()<n){
+            ArrayList<Integer> temp=new ArrayList<>();
+            for (int i =0;i<ans.size();i++){
+                if(ans.get(i)*2-1<=n){
+                    temp.add(ans.get(i)*2-1);
+                }
+            }
+            for (int i=0;i<ans.size();i++){
+                if(((ans.get(i)*2))<=n){
+                    temp.add(ans.get(i)*2);
+                }
+            }
+            ans=temp;
+        }
+        int[] out=new int[ans.size()];
+        for(int i=0;i<ans.size();i++){
+            out[i]=ans.get(i);
+        }
+        
+        return out;
+    }
+    public static int [] beautifulArr(int n ){
+        int[]res=new int[n];
+        if(n==1){
+            return new int[]{1};
+        }
+        else if(n==2){
+            return new int[]{1,2};
+        }
+        else{
+            int[]odds=beautifulArr((n+1)/2);
+            int[]even=beautifulArr(n/2);
+            for(int i=0;i<odds.length;i++){
+                res[i]=odds[i]*2-1;
+            }
+            for(int j=0;j<even.length;j++){
+                res[odds.length+j]=even[j]*2;
+            }
+        }
+        return res;
+    }
+    
+
     public static char nextGreatestLetter(char[] letters, char target) {
         char answer=letters[0];
         int end=letters.length,start=0,mid=0;

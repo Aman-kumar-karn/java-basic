@@ -26,7 +26,7 @@ public class ifElse {
         // }
         int a =sc.nextInt();
         int b =sc.nextInt();
-        if(1%1){
+        if(a>b){
             System.out.println( "a is greater than b");
         }
         else if (a==b) {

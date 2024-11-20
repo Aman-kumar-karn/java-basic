@@ -1,3 +1,4 @@
+import java.util.*;
 public class dsa {
     // public int[] twoSum(int[] nums, int target) {
     //     for (int i=0;i<nums.length;i++){
@@ -200,7 +201,132 @@ public class dsa {
         return letters[start];
         
     }
-    
+    public static List<Integer> findDisappearedNumbers(int[] nums) {
+        List<Integer> answer=new ArrayList<>();
+        int i=0;
+        while(i<nums.length){
+            int correct=nums[i]-1;
+            if(nums[i]!=(i+1)&& nums[correct]!=nums[i]){
+                int temp=nums[i];
+                nums[i]=nums[correct];
+                nums[correct]=nums[i];
+            }
+            else{
+                i++;
+            }
+        }
+        for(i=0;i<nums.length;i++){
+            if (nums[i]!=i+1){
+                answer.add(i+1);
+            }
+        }
+
+        return answer;
+    }
+    public static int findDuplicate(int[] nums) {
+        int i=0;
+        while(i<nums.length){
+            int correct=nums[i]-1;
+            if(nums[i]!=nums[correct]){
+                int temp=nums[i];
+                nums[i]=nums[correct];
+                nums[correct]=temp;
+            }
+            else if (nums[i]==nums[correct]&& i!=correct){
+                return nums[i];
+            }
+            else {
+                i++;
+            }
+        }
+        return -1;
+    }
+    public static int findDuplicate2(int[] nums) {
+        boolean[] arr = new boolean[nums.length];
+
+        for(int i : nums){
+            if(arr[i] == true){
+                return i;
+            }
+            else{
+                arr[i] = true;
+            }
+        }
+        return -1;
+    }
+    public static int [] findErrorNums(int[] nums) {
+        boolean [] check=new boolean[nums.length];
+        for(int x : nums){
+            if(check[x]==true){
+                return new int [] {x,x+1};
+            }
+            else{
+                check[x]=true;
+            }
+        }
+        return new int [] {-1,-1};
+        
+    }
+    // public int IndexOf(int target,int [] arry){
+    //     for(int i=0;i<arry.length;i++){
+    //         if(target==arry[i]){
+    //             return i+1;
+    //         }
+    //     }
+    // }
+    public static int firstMissingPositive(int[] nums) {
+        int max=Arrays.stream(nums).max().getAsInt();
+        boolean [] check= new boolean[max];
+        for(int x: nums){
+            if(x>0){
+                check[x-1]=true;
+            }
+        }
+        for(int i=0;i<check.length;i++){
+            if(check[i]==false){
+                return i+1;
+            }
+        }
+        return -1;    
+    }
+
+//     int count= nums.length-k+1;
+//     int [] answer=new int[count];
+//     for(int i=0;i<count;i++){
+//         int j=0;
+//         while(j<k){
+//             if (duplicate(nums,i,i+k)==true){
+//                 break;
+//             }
+//             else{
+//                 answer[i]=sum(nums,i,i+k);
+                
+//             }
+//         }
+//     }
+//     return Arrays.stream(answer).max().getAsInt();    
+// }
+// public int sum(int [] arry, int start, int end){
+//     int add=0;
+//     for(int i=start;i<end;i++){
+//         add += arry[i];
+//     }
+//     return add;
+// }
+// public boolean duplicate(int [] arry, int start, int end){
+//     int max = Arrays.stream(arry).max().getAsInt();
+//     boolean [] check = new boolean[max];
+//     for(int i=0;i<(end-start);i++){
+//         if(check[arry[i]]==true){
+//             return true;
+//         }
+//         else {
+//             check[arry[i]]=true;
+//         }
+
+//     }
+//     return false;
+// }
     public static void  main(String[] args){
         // int [ ] num={3,3,546,656,54,45,5645,2};
         // System.out.println(removeElement(num,2));
@@ -212,9 +338,11 @@ public class dsa {
         char [] a ={'x','x','y','y'};
         // System.out.println(findNumbers(a)); 
         // System.out.println((int)Math.log10(34333));
-        int [] nums1 = {1,4} ,nums2 = {2,3};
+        int [] nums1 = {1,2,0} ,nums2 = {2,3};
         char target='z';
-        System.out.println(nextGreatestLetter(a,target));
+        // System.out.println(nextGreatestLetter(a,target));
+        System.out.println(firstMissingPositive(nums1));
+
 
 
     }
